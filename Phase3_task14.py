@@ -1,6 +1,13 @@
 import requests
 
-URL="https://jsonplaceholder.typicode.com/posts/"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_key=os.getenv("API_KEY")
+
+URL=api_key
 
 response=requests.get(URL)
 posts=response.json()
